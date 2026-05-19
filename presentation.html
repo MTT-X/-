@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>从文字到风险：航运保险智能分类 - 期末汇报</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; background: #1a1a2e; color: #eee; overflow: hidden; }
+  .slide { display: none; width: 100vw; height: 100vh; padding: 60px 80px; flex-direction: column; justify-content: center; position: absolute; top: 0; left: 0; }
+  .slide.active { display: flex; }
+  .slide.title-slide { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); align-items: center; text-align: center; }
+  .slide.section-slide { background: linear-gradient(135deg, #1a1a2e, #16213e); align-items: center; text-align: center; }
+  .slide.content-slide { background: #1a1a2e; }
+  h1 { font-size: 3em; margin-bottom: 20px; background: linear-gradient(90deg, #f7971e, #ffd200); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  h2 { font-size: 2.2em; margin-bottom: 15px; color: #f7971e; }
+  h3 { font-size: 1.5em; color: #ffd200; margin-bottom: 20px; }
+  .subtitle { font-size: 1.3em; color: #aaa; margin-bottom: 40px; }
+  .meta { font-size: 0.9em; color: #666; }
+  .stat-row { display: flex; justify-content: space-around; margin: 40px 0; }
+  .stat-item { text-align: center; }
+  .stat-val { font-size: 3em; font-weight: bold; color: #ffd200; }
+  .stat-lbl { font-size: 1em; color: #aaa; }
+  ul { list-style: none; padding: 0; }
+  li { padding: 12px 0; font-size: 1.2em; line-height: 1.6; }
+  li::before { content: "▸ "; color: #f7971e; }
+  .two-col { display: flex; gap: 40px; }
+  .col { flex: 1; }
+  .highlight { color: #f7971e; font-weight: bold; }
+  .danger { color: #e74c3c; font-weight: bold; }
+  .safe { color: #2ecc71; font-weight: bold; }
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 1.1em; }
+  th { background: #302b63; padding: 12px; text-align: left; }
+  td { padding: 10px 12px; border-bottom: 1px solid #333; }
+  tr:nth-child(even) { background: rgba(255,255,255,0.03); }
+  .page-num { position: absolute; bottom: 30px; right: 50px; font-size: 0.8em; color: #555; }
+  .bar-wrap { background: #333; border-radius: 4px; height: 24px; margin: 5px 0; }
+  .bar-fill { background: linear-gradient(90deg, #f7971e, #ffd200); border-radius: 4px; height: 100%; display: flex; align-items: center; padding-left: 10px; font-size: 0.85em; color: #1a1a2e; font-weight: bold; }
+  .flow-arrow { text-align: center; font-size: 2em; color: #f7971e; margin: 10px 0; }
+  .card { background: rgba(255,255,255,0.05); border-radius: 8px; padding: 20px; margin: 10px 0; }
+  .insight-box { background: rgba(247, 151, 30, 0.1); border-left: 4px solid #f7971e; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .fix-box { background: rgba(46, 204, 113, 0.1); border-left: 4px solid #2ecc71; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide title-slide active">
+  <h1>从文字到风险</h1>
+  <div class="subtitle">基于非结构化货品描述的航运保险智能分类与风险评估</div>
+  <div class="meta">FINA2003 金融科技前沿 · 期末项目 · 第一组</div>
+  <div class="meta" style="margin-top:10px">成员：华羽 / 梅誉扬 / 杨宇轩 &nbsp;|&nbsp; 合作企业：安蓝信息科技</div>
+</div>
+
+<!-- Slide 2: 目录 -->
+<div class="slide content-slide">
+  <h2>目录</h2>
+  <div class="two-col">
+    <div class="col">
+      <h3>模块一</h3>
+      <ul><li>行业背景与痛点</li><li>竞品调研</li><li>产品设计思路</li></ul>
+    </div>
+    <div class="col">
+      <h3>模块二</h3>
+      <ul><li>数据探索与预处理</li><li>分类方案实现</li><li>错误分析</li></ul>
+    </div>
+  </div>
+  <h3 style="margin-top:30px">模块三 · 风险预测初探</h3>
+  <div class="page-num">2 / 14</div>
+</div>
+
+<!-- Slide 3: 行业背景 -->
+<div class="slide content-slide">
+  <h2>行业背景与痛点</h2>
+  <div class="two-col">
+    <div class="col">
+      <h3>航运保险市场</h3>
+      <ul>
+        <li>中国航运保险市场超 <span class="highlight">500亿</span> RMB</li>
+        <li>年增速约 <span class="highlight">8-10%</span></li>
+        <li>核心玩家：平安、人保、太平洋</li>
+        <li>科技赋能是行业趋势</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>核心痛点</h3>
+      <ul>
+        <li>货品描述是<span class="danger">自由文字</span>，无统一格式</li>
+        <li>风险评估依赖<span class="danger">人工经验判断</span></li>
+        <li>处理效率低，单票耗时 <span class="danger">5-15分钟</span></li>
+        <li>分类标准不统一，定价偏差大</li>
+      </ul>
+    </div>
+  </div>
+  <div class="insight-box">
+    <strong>关键洞察：</strong>从"散装化工液体"到"建筑设备零件若干"，2.8万条描述背后是真实的效率损失和定价风险。
+  </div>
+  <div class="page-num">3 / 14</div>
+</div>
+
+<!-- Slide 4: 竞品调研 -->
+<div class="slide content-slide">
+  <h2>竞品与方案调研</h2>
+  <table>
+    <tr><th>方案类型</th><th>代表</th><th>优势</th><th>不足</th></tr>
+    <tr><td>传统规则引擎</td><td>各保险公司自建</td><td>可控、可解释</td><td>维护成本高、覆盖率有限</td></tr>
+    <tr><td>ML分类</td><td>Concirrus, Planck</td><td>自适应、高精度</td><td>需标注数据、黑箱决策</td></tr>
+    <tr><td>LLM方案</td><td>Zest AI等</td><td>理解力强、零样本</td><td>成本高、幻觉风险</td></tr>
+  </table>
+  <div class="insight-box">
+    <strong>我们的选择：</strong>规则匹配方案 — 适配业务现状（无标注数据），高可解释性，快速迭代，低成本部署。论证合理比技术复杂度更重要。
+  </div>
+  <div class="page-num">4 / 14</div>
+</div>
+
+<!-- Slide 5: 产品设计 -->
+<div class="slide content-slide">
+  <h2>产品设计：分类系统流程</h2>
+  <div style="text-align:center; font-size:1.2em; line-height:2.2">
+    <div class="card">投保人填写货品描述</div>
+    <div class="flow-arrow">↓</div>
+    <div class="card"><span class="highlight">自动分类引擎</span>：文本清洗 → 关键词匹配 → 风险定级</div>
+    <div class="flow-arrow">↓</div>
+    <div style="display:flex;gap:20px">
+      <div class="card" style="flex:1;border:2px solid #e74c3c"><span class="danger">高风险</span><br>自动拒保/人工复核</div>
+      <div class="card" style="flex:1;border:2px solid #2ecc71"><span class="safe">低风险</span><br>快速承保/自动定价</div>
+      <div class="card" style="flex:1;border:2px solid #f7971e">未分类<br>人工判定/反馈词库</div>
+    </div>
+  </div>
+  <div class="insight-box">
+    <strong>人工复核：</strong>仅对高风险+未分类进行人工审核（约占总量30%），其余自动放行，效率提升约70%。
+  </div>
+  <div class="page-num">5 / 14</div>
+</div>
+
+<!-- Slide 6: Section -->
+<div class="slide section-slide">
+  <h2>模块二：数据处理与分类建模</h2>
+  <div class="subtitle">从 28,304 条非结构化文本到自动化分类标签</div>
+  <div class="page-num">6 / 14</div>
+</div>
+
+<!-- Slide 7: 数据探索 -->
+<div class="slide content-slide">
+  <h2>数据探索</h2>
+  <div class="stat-row">
+    <div class="stat-item"><div class="stat-val">28,304</div><div class="stat-lbl">总货品描述</div></div>
+    <div class="stat-item"><div class="stat-val">中英混杂</div><div class="stat-lbl">文本语言</div></div>
+    <div class="stat-item"><div class="stat-val">8,045</div><div class="stat-lbl">HS编码条目</div></div>
+    <div class="stat-item"><div class="stat-val">10类</div><div class="stat-lbl">拒保规则</div></div>
+  </div>
+  <h3>数据特征与挑战</h3>
+  <ul>
+    <li><span class="highlight">格式不统一</span> — 从 "FITNESS EQUIPMENT" 到中文 "加热器连接件"</li>
+    <li><span class="highlight">信息缺失</span> — 约260条为 "SEE ATTACHMENT" 等无效描述 (0.9%)</li>
+    <li><span class="highlight">中英混杂</span> — 约60%英文/40%中文，需分别处理</li>
+    <li><span class="highlight">短文本为主</span> — 平均长度约45字符，最短仅1字符</li>
+  </ul>
+  <div class="page-num">7 / 14</div>
+</div>
+
+<!-- Slide 8: 分类方案 -->
+<div class="slide content-slide">
+  <h2>分类方案：三层规则匹配引擎</h2>
+  <div style="text-align:center; font-size:1.05em; line-height:2">
+    <div class="card">
+      <strong>第1层：文本预处理</strong><br>
+      去换行符 → 全角转半角 → 多空格归一
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="card" style="border:2px solid #e74c3c">
+      <strong>第2层：除外标的风险筛查</strong><br>
+      匹配10类拒保规则 → 命中任一即标记 <span class="danger">高风险(拒保)</span><br>
+      <span style="font-size:0.8em;color:#888">关键词例：活动物/冷冻品、艺术品/珠宝、易燃易爆、精密设备、车辆/船舶、玻璃/陶瓷、二手货…</span>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="card" style="border:2px solid #2ecc71">
+      <strong>第3层：HS大类匹配</strong><br>
+      匹配22类HS编码关键词 → 得分最高类别<br>
+      <span style="font-size:0.8em;color:#888">贱金属、纺织制品、机械电气、塑料橡胶、化工产品…共22大类</span>
+    </div>
+  </div>
+  <div class="page-num">8 / 14</div>
+</div>
+
+<!-- Slide 9: 分类结果 -->
+<div class="slide content-slide">
+  <h2>分类结果总览</h2>
+  <div class="stat-row">
+    <div class="stat-item"><div class="stat-val" style="color:#2ecc71">82.5%</div><div class="stat-lbl">可承保 (20,309条)</div></div>
+    <div class="stat-item"><div class="stat-val" style="color:#e74c3c">17.5%</div><div class="stat-lbl">拒保 (4,950条)</div></div>
+  </div>
+  <h3>拒保Top 5原因</h3>
+  <div style="max-width:700px;margin:0 auto">
+    <div>玻璃/陶瓷/石材/易碎品 <span style="float:right">1,470</span></div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:100%">29.7%</div></div>
+    <div>车辆/航空器/船舶 <span style="float:right">1,156</span></div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:78%">23.4%</div></div>
+    <div>易腐易蛀品/鲜活货 <span style="float:right">630</span></div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:43%">12.7%</div></div>
+    <div>精密仪器/芯片/液晶 <span style="float:right">409</span></div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:28%">8.3%</div></div>
+    <div>易燃易爆品 <span style="float:right">295</span></div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:20%">6.0%</div></div>
+  </div>
+  <div class="page-num">9 / 14</div>
+</div>
+
+<!-- Slide 10: 错误分析 -->
+<div class="slide content-slide">
+  <h2>错误分析：子串误匹配的发现与修复</h2>
+  <h3 style="color:#e74c3c">关键发现</h3>
+  <div class="card" style="border:1px solid #e74c3c">
+    <span class="danger">95.3%</span> 的拒保案例仅命中 <strong>1个</strong> 关键词，存在大量<span class="danger">子串误匹配</span>：
+    <table style="margin-top:10px">
+      <tr><th>描述</th><th>误匹配词</th><th>误判类别</th></tr>
+      <tr><td>CARDBOARD FILE BOX</td><td><span class="danger">car</span> in cardboard</td><td>车辆</td></tr>
+      <tr><td>AMUSEMENT MACHINE PARTS</td><td><span class="danger">art</span> in parts</td><td>艺术品</td></tr>
+      <tr><td>POLYURETHANE...SHIPPER</td><td><span class="danger">ship</span> in shipper</td><td>船舶</td></tr>
+    </table>
+  </div>
+  <div class="fix-box">
+    <strong>修复方案：</strong>英文短词(≤3字符)使用正则整词边界匹配<br>
+    修复后拒保率从 <span class="danger">28.2%</span> → <span class="safe">17.5%</span>，排除了 <strong>3,045条</strong> 误判。
+  </div>
+  <div class="insight-box">
+    <strong>启示：</strong>规则系统的真正挑战不在召回而在精度。整词匹配是英文NLP中基础但常被忽视的细节。
+  </div>
+  <div class="page-num">10 / 14</div>
+</div>
+
+<!-- Slide 11: HS分布 -->
+<div class="slide content-slide">
+  <h2>可承保货物 HS 大类分布</h2>
+  <div class="two-col">
+    <div class="col">
+      <div>机器/机械/电气设备 <span style="float:right">3,774</span></div>
+      <div class="bar-wrap"><div class="bar-fill" style="width:100%">16.2%</div></div>
+      <div>贱金属及其制品 <span style="float:right">3,462</span></div>
+      <div class="bar-wrap"><div class="bar-fill" style="width:92%">14.8%</div></div>
+      <div>塑料/橡胶制品 <span style="float:right">2,389</span></div>
+      <div class="bar-wrap"><div class="bar-fill" style="width:63%">10.2%</div></div>
+      <div>化学工业产品 <span style="float:right">1,756</span></div>
+      <div class="bar-wrap"><div class="bar-fill" style="width:47%">7.5%</div></div>
+      <div>纺织原料制品 <span style="float:right">1,552</span></div>
+      <div class="bar-wrap"><div class="bar-fill" style="width:41%">6.6%</div></div>
+      <div>杂项制品 <span style="float:right">1,188</span></div>
+      <div class="bar-wrap"><div class="bar-fill" style="width:31%">5.1%</div></div>
+    </div>
+    <div class="col">
+      <div>木浆/纸及纸板 <span style="float:right">706</span></div>
+      <div class="bar-wrap"><div class="bar-fill" style="width:19%">3.0%</div></div>
+      <div>矿产品 <span style="float:right">654</span></div>
+      <div class="bar-wrap"><div class="bar-fill" style="width:17%">2.8%</div></div>
+      <div style="margin-top:20px;color:#f7971e">未分类: 4,718 (20.2%)</div>
+      <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#e74c3c,#f7971e)">20.2%</div></div>
+      <div style="color:#888">信息缺失: 259 (1.1%)</div>
+      <br>
+      <div class="insight-box" style="font-size:0.9em">
+        总覆盖率 <span class="highlight">83.3%</span>（含拒保+分类成功）
+      </div>
+    </div>
+  </div>
+  <div class="page-num">11 / 14</div>
+</div>
+
+<!-- Slide 12: Section -->
+<div class="slide section-slide">
+  <h2>模块三：风险预测初探</h2>
+  <div class="subtitle">将分类标签纳入风险评估框架</div>
+  <div class="page-num">12 / 14</div>
+</div>
+
+<!-- Slide 13: 风险预测 -->
+<div class="slide content-slide">
+  <h2>风险预测与业务含义</h2>
+  <div class="two-col">
+    <div class="col">
+      <h3>风险量化思路</h3>
+      <div class="card">
+        <strong>拒保类 → 高风险 (Risk=1.0)</strong><br>
+        <span style="font-size:0.9em;color:#888">直接匹配除外标的表 → 不可承保</span>
+      </div>
+      <div class="card">
+        <strong>HS大类 + 历史赔付率加权</strong><br>
+        <span style="font-size:0.9em;color:#888">例：易碎品(玻璃/陶瓷) → 0.7<br>机械设备 → 0.3 · 纺织品 → 0.2</span>
+      </div>
+    </div>
+    <div class="col">
+      <h3>业务价值</h3>
+      <ul>
+        <li><span class="highlight">17.5%</span> 自动筛查为高风险</li>
+        <li><span class="highlight">约14,500条</span> 可自动承保+低风险定价</li>
+        <li>为保险公司节省约 <span class="highlight">70%</span> 人工审核时间</li>
+      </ul>
+    </div>
+  </div>
+  <div class="insight-box">
+    <strong>局限与改进：</strong>当前基于规则的初筛无法捕捉新型风险模式。建议积累标注数据后，引入 XGBoost/LightGBM 构建监督学习风险模型，将分类标签+描述embedding+历史赔付数据作为特征。
+  </div>
+  <div class="page-num">13 / 14</div>
+</div>
+
+<!-- Slide 14: 总结 -->
+<div class="slide content-slide">
+  <h2>总结与展望</h2>
+  <div class="two-col">
+    <div class="col">
+      <h3>已完成</h3>
+      <ul>
+        <li>构建了 <span class="highlight">10类拒保+22类HS</span> 关键词规则库</li>
+        <li>实现了 <span class="highlight">83.3%</span> 自动分类覆盖率</li>
+        <li>发现并修复<span class="highlight">子串误匹配</span>，提升分类精度</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>改进方向</h3>
+      <ul>
+        <li>引入 TF-IDF 向量相似度兜底未分类</li>
+        <li>接入 LLM zero-shot 处理高专业度描述</li>
+        <li>建立人工反馈闭环持续优化词库</li>
+      </ul>
+    </div>
+  </div>
+  <div class="insight-box" style="text-align:center; font-size:1.2em">
+    <strong>核心价值：</strong>将非结构化文本 → 结构化风险标签，让机器处理规则、让人专注判断。
+  </div>
+  <div style="text-align:center;margin-top:40px;font-size:1.5em;color:#f7971e">感谢聆听 · 欢迎提问</div>
+  <div class="page-num">14 / 14</div>
+</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowRight' || e.key === ' ') {
+    e.preventDefault();
+    slides[currentSlide].classList.remove('active');
+    currentSlide = Math.min(currentSlide + 1, slides.length - 1);
+    slides[currentSlide].classList.add('active');
+  } else if (e.key === 'ArrowLeft') {
+    e.preventDefault();
+    slides[currentSlide].classList.remove('active');
+    currentSlide = Math.max(currentSlide - 1, 0);
+    slides[currentSlide].classList.add('active');
+  }
+});
+document.addEventListener('click', function() {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+});
+</script>
+</body>
+</html>

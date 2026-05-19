@@ -1,0 +1,1041 @@
+============================================================
+  航运保险货品智能分类 - 完整报告
+============================================================
+
+总数据量: 28304
+拒保: 4950 (17.5%)
+可承保: 23354 (82.5%)
+
+----------------------------------------
+拒保货物明细 (前200条)
+----------------------------------------
+[1] NT21 PS TOUCH PANEL WITH GLASS NP 5 TOUCH PANEL WITH GLASS AND DISPLAY
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: glass, touch panel
+
+[12] LCD top cover assembly HS CODE:3926909709 AS PER INVOICE
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: LCD
+
+[18] FIBER LASER CUTTING MACHINE MODEL: D-POWER 2560FCCD 6000W RAYCUS MANUFACTURER: BYSTRONIC (SHENZHEN) LASER TECHNOLOGY CO.
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: laser
+
+[30] Ultrafiltration Membrane、Nanofiltration Membrane
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: nano
+
+[32] POLYURETHANE PREPOLYMER FOR SHOE SOLE ZH8729 ZH3215 HS CODE NO:39095000 TEMP:+30C SET BY SHIPPER VENT:CLOSE
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: ship
+
+[37] MOTOR HS CODE:850152209019 LASER CUTTING MACHINE ACCESSORY HS CODE:846620980000 *SELIMPASA MAH.6059 SK NO:11 SILIVRI/IST
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: laser
+
+[38] SCREEN WINDOW SOLAR LIGHT
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: screen
+
+[39] CORN STARCH VERMICELLI
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: corn
+
+[43] WORKED SLATE 1)TIIU2143330/20GP/ML-CN0661863/57 PACKAGE/25460.00KGS/20CBM 2)MRSU0362480/20GP/ML-CN0661813/55 PACKAGE/249
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: ship
+
+[44] SILVER COATED MIRROR
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: silver
+
+[49] LASER CUTTING MACHINE HS CODE:8456110090
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: laser
+
+[56] 2T FORKLIFT Chassis number/ VIN; Make/brand: 14BE25321 A259-410000-001 14BE25322 . A259-410000-001 Year:APR-2025 Color:R
+  排除原因: 二手货物
+  匹配词: used
+
+[61] PORCELAIN WARE
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: porcelain
+
+[65] PERFORMA 285 BASE 175 FINIDIP SILVER ZN-NI CLASS 8 UN3264 96 PACKAGES=3 PALLETS
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: silver
+
+[69] CASTING CLAMPS
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: lamp
+
+[74] SPARE PARTS FOR DUMP TRUCK
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: truck
+
+[85] HYBRID CAR VIN:LFMCU1BR6S0140461 LFMCU1BR0S0140472 LFMCU1BR0S0140889
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: car
+
+[92] 汽车零配件
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: 汽车
+
+[93] IMITATION JEWELRY
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: jewelry
+
+[96] DIESEL GENERATOR
+  排除原因: 易燃易爆品/烟花爆竹
+  匹配词: diesel
+
+[107] WHEAT GERM EXTRACT
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: wheat
+
+[108] MOTORCYCLE TIRE MOTORCYCLE INNER TUBE
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: motorcycle
+
+[112] HYDRAULIC PRESS Y27-200T PUNCHING MACHINE J21S-25T PUNCHING MACHINE J21S-40T TILE PRESS MACHINE
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: tile
+
+[127] FLOAT GLASS
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: glass
+
+[129] CHILDREN CAR
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: car
+
+[141] SKODA KAMIQ GT VIN:LSV5J60N7RN013343 HS CODE:870322 MANUFACTURER NAME: SKODA MODE: SVW6447HLD TYPE OF VEHICLE:KAMIQ GT Y
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: vehicle
+
+[165] Weight Large screen console server TV Audio Lamps Support toolkit Lighting control panel electrical cable
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: lamp, screen
+
+[172] HAND HELD LASER WELDING MACHINE
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: laser
+
+[180] IC,芯片,集成电路
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: 芯片
+
+[187] BUSHING DUST COVER END CAP GASKET METAL FITTING PIN PLASTIC BEARING PROTECTIVE COVER BAG BOLT BOX CARTON CIRCLIP CLAMP G
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: nut
+
+[193] LED DISPLAY SCREEN HS CODE:8528591090
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: screen
+
+[195] CORNER CLAMP DRAIN FITTING SPIRAL CLAMP STEEL CORNER
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: corn
+
+[196] SAND MAKING MACHINE GUARD PLATE TRIANGLE CONVEYING BELT SAND MAKING MACHINE ROTOR ASSEMBLY DRILL BITS FIVE RING IMPACTOR
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: screen
+
+[197] HINGES, BALL BEARING SLIDE, DRAWER PULL, STAPLE GUN
+  排除原因: 军火/军品/原木/鱼粉/水泥/原糖/精制糖/原煤/黄麻
+  匹配词: gun
+
+[205] CERAMIC FIBER BLANKET
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: ceramic
+
+[207] KYNGO KG135B-VM MOTORCYCLE 摩托车散件
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: 摩托车, motorcycle
+
+[208] TEXTILE FABRICS
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: tile
+
+[219] Elantra 车架号:LSVXCABD8R2033175 旧大众汽车牌1984ML小型普通客车 CNY61100
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: 汽车, 客车
+
+[224] COMPLETE SET OF POULTRY FARM EQUIPMENT 50''CONE FAN 57\
+  排除原因: 活动物及动物产品/血制品/冷冻品/疫苗
+  匹配词: poultry
+
+[227] STEEL CARRIAGE FASTENERS FITTINGS FOR TRAILER BODIES PLASTIC CLAMPS PLASTIC SAFEBOXES
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: trailer
+
+[237] ARTIFICIAL QUARTZ STONE WHEEL LED LIGHT TAPE LIGHT CRACK SPLICER STAINLESS STEEL TANK THERAPEUTIC EQUIPMENT 20GP/TEMU191
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: stone
+
+[238] TROLLEY DISH RACK SHOE BOX SEALING STRIP WORK MAT BOWL AND CUP SET SUPPORT PROPS RICE STORAGE MASSAGE BUCKET BRAKE CALIP
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: rice
+
+[247] 1. BG Erdnagel Massif D25x470 2. Plan Clips 3. Plug Red 4. AG Screw M14 5. KP Nut 14x19 6. Banisters Fixing 7. Shutter B
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: nut
+
+[249] POULTRY KEEPING EQUIPMENT
+  排除原因: 活动物及动物产品/血制品/冷冻品/疫苗
+  匹配词: poultry
+
+[279] EXCAVATOR
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: excavator
+
+[293] TRUCK TYRE FORM M NUMBER: MF20240082340 BA03220240002368 GOODS ON TRANSIT TO VAL AND GOOD BONDED TERMINAL, ASA. 18UNITS 
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: truck
+
+[306] USED CAR
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: car
+
+[307] (1S)-4,5-DIMETHOXY-1[(METHYLAMINO)METHYL] BENZOCYCLOBUTANE HYDROCHLORIDE CAS:866783-13-3
+  排除原因: 易燃易爆品/烟花爆竹
+  匹配词: butane
+
+[310] JACKETED GLASS REACTOR HS CODE: 8479820090 N.W.: 136KG G.W.: 168KG HEATHER/COOLING CIRCULATOR HS CODE:8419899090 N.W.: 9
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: glass
+
+[315] UNPOWERED VESSELS TEXU6022480
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: vessel
+
+[316] SDPM 520, CLAMP TYPE 6.0 X 55 MM HS CODE:8436.99
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: lamp
+
+[320] 飞机电源车 9台 轮胎1拖9个 配件 1拖
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: 飞机
+
+[333] WORKED SLATE 1)BSIU3351773/20GP/ML-CN0719776/92 PACKAGE/26110.00KGS/20CBM 2)BSIU3352070/20GP/ML-CN0719771/57 PACKAGE/259
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: ship
+
+[343] NEUVIZ 128 MULTI-SLICE CT SCANNER SYSTEM; (REFURBISHED)
+  排除原因: 二手货物
+  匹配词: refurbished
+
+[348] EMPTY SILVER BRUSH PENS 2ML EMPTY PLASTIC BRUSH PENS 2ML
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: silver
+
+[356] BOLT PADDING RUBBER U-CLAMP CASTING COMPOUND FRICTION LINER
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: lamp
+
+[357] GUAZUMA EXTRACT LICORICE ROOT EXTRACT COLEUS AMBOINICUS EXTRACT GREEN TEA EXTRACT NONI EXTRACT SAUROPUS ANDROGYNUS EXTRA
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: rice
+
+[358] SOLAR MODULE 450W MONO-CRYSTALLINE SILICON (1722X1134X30MM)
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: crystal
+
+[368] DG CARGO UN 3480 CLASS 9: LIFEPO4 BATTERY ELECTRIC MOTORCYCLE ELECTRIC SCOOTER NON-DG CARGO ELECTRIC SCOOTER ACCESSORY P
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: motorcycle
+
+[369] 43kg rail with holes with painting oil 24kg rail with holes with painting oil
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: painting
+
+[379] 301 RAW MATERIAL FOR CERAMIC ENGOBE HS CODE: 3207.20
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: ceramic
+
+[386] GAS RANGES AUTO PARTS TILES JERRY CAN CARGO IN TRANSIT TO GABORONE,BOTSWANA
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: tile
+
+[397] AERIAL WORKING PLATFORM&MANUAL TRUCK&ELECTRIC TRUCK WITH ACCESSORIES&FORKLIFT WITH ACCESSORIES
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: truck
+
+[398] TEXTILE GOODS
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: tile
+
+[404] SOLAR MODULE 450W mono-crystalline silicon (1722*1134*30mm)
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: crystal
+
+[407] DUMP TRUCK
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: truck
+
+[410] SOLAR MODULE 460W mono-crystalline silicon (1762*1134*30mm)
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: crystal
+
+[413] LASER MARKING MACHINE HS CODE:8456110090
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: laser
+
+[419] LASER ENGRAVING MACHINE HS CODE:8456110090 3D PRINTER HS CODE:848520000 WASH AND CURING MACHINE HS CODE:8479899990 SPARE
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: laser
+
+[430] COMPLETE SET OF POULTRY FARM EQUIPMENT POULTRY LAYER CAGE (A TYPE,124M*12M, 3TIERS AND 3ROWS) FEEDING SYSTEM FOR BROILER
+  排除原因: 活动物及动物产品/血制品/冷冻品/疫苗
+  匹配词: poultry
+
+[438] GLASS BOTTLE PLASTIC CAP SHRINK FILM
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: glass
+
+[440] CORNER CLAMP HOLDER PLATE FOR AIR DUCT STIFFENING SPIRAL CLAMP STEEL CORNER STIFFENING CROSS THREADED ROD
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: corn
+
+[444] SPAREPART FOR TRUCK: -BRAKE LINING 8708.30.90 -PROPELLER SHAFT 8483.60.00 -AIR RESERVOIR 7612.90.90 -FRONT WHEEL OIL SEA
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: truck
+
+[448] 2,2,3,3-TETRAFLUOROBUTANE-1,4-DIOL CAS#425-61-6
+  排除原因: 易燃易爆品/烟花爆竹
+  匹配词: butane
+
+[451] FIBER CEMENT FLOWERPOT 6810999000 ARTIFICIAL PLANT 6702100000
+  排除原因: 军火/军品/原木/鱼粉/水泥/原糖/精制糖/原煤/黄麻
+  匹配词: cement
+
+[454] HYBRID CAR VIN:LFMCU1BR5S0105037 LFMCU1BR3S0107403 LFMCU1BR9S0107373
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: car
+
+[457] AIR COOLED CHILLER
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: OLED
+
+[460] 岛津傅里叶变换红外光谱仪
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: 光谱
+
+[470] QU100 rail with painting oil QU120 rail with painting oil 38kg rail with holes with painting oil
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: painting
+
+[482] BLACK GUARD PUMP 28/410 SMALL BLACK PUMP 22/400 SMALL YELLOW PUMP 22/400 16OZ AMBER GLASS BOTTLES 4OZ YELLOW GLASS BOTTL
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: glass
+
+[489] HARDWARE STAMPING MOLDS HS CODE:82073000
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: stamp
+
+[496] XRES-5 20T electric servo press(splitscreen version)
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: screen
+
+[497] 2600 CARTONS OF WALNUT KERNELS HS CODE: 080232
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: kernel, walnut
+
+[508] LED DISPLAY SCREEN HS CODE:8528591090 NET WEIGHT: 650KGS
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: screen
+
+[509] ARTIFICIAL STONE
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: stone
+
+[513] COPPER FREE AND LEAD FREE SILVER MIRROR WITH EPOXY PAINT 1830X3353X3 18CRATES 1830X3050X3 9CRATES 2134X3353X3 9CRATES 21
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: silver
+
+[514] 大米
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: 大米
+
+[519] MASSAGE TOOL INV#:DGLYCK250527001 7CTNS+ 58CTNS + 97CTNS + 905CTNS THIS SHIPMENT CONTAINS NO SOLID WOOD PACKING METERIAL
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: ship
+
+[526] REED SCREEN
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: screen
+
+[528] KYNGO KG250GY-12 MOTORCYCLE 摩托车散件
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: 摩托车, motorcycle
+
+[539] forklift truck excavator
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: truck, excavator
+
+[540] 进口二手精密仪器
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: 精密仪器
+
+[542] DUMP TRUCK TIRE H.S CODE:401180
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: truck
+
+[558] LASER TUBE CUTTING MACHINE LX-K9MAX HS CODE:845611
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: laser
+
+[565] ELECTRIC CAR VIN:LFVVB9G3XP5234348 LC0DH4CD8P1464681
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: car
+
+[574] COMBINED RICE MILLING MACHINE HS CODE:843780
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: rice
+
+[581] GLASS CUP HS CODE:701337
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: glass
+
+[584] PEARL PIGMENT PROFORMA INVOICE NO.:20250703 INVOICE NO. 2025/SSLA/02 LB9305 SOLAR GOLD HS:320649
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: gold
+
+[599] 高效液相色谱仪 2套
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: 色谱
+
+[603] DISPLAY TEXTILE PVC SHEET PROMO COUNTER PRINTABLE HEAT TRANSFER VINYL PVC VINYL ONE WAY VISION REFLECTIVE VINYL PVC SHEE
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: tile
+
+[606] MOBILE BACK COVER AND SCREEN GUARD
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: screen
+
+[620] EXCAVATOR SPARE PARTS HS CODE:84314990
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: excavator
+
+[628] ELECTRIC LOCOMOTIVE (PM MOTOR) VOLTER 2/2 FOR TRANSPORTING HUMANS AND MATERIALS IN UNDERGROUND MINING IN MINE 2 SETS HS 
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: locomotive
+
+[633] CORN HARVESTER 8433599090
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: corn
+
+[636] 名称:火花塞 名称:3D打印机 名称:清洗固化机 名称:飞利浦记录仪 名称:汽车座垫 名称:蓝牙耳机 名称:睫毛扫的软管 名称:汽车LED灯珠 名称:遥控器 名称:连衣裙 名称:视频处理器,视频分配器*
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: 汽车
+
+[638] 液相色谱仪 1台 气相色谱仪 1台
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: 色谱
+
+[639] ELECTRIC GOLF CAR HS:8703101900 ELECTRIC GOLF CAR HS:8703101900
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: car
+
+[641] 电动车
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: 电动车
+
+[642] HYBRID CAR VIN:LFMCU1BR0S0089894 LFMCU1BR8S0105064 LFMCU1BR2S0104864
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: car
+
+[643] TRUCK TYRES
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: truck
+
+[649] GRANITE STONE HTS:68022300 MEDUYH783860
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: stone, granite
+
+[655] MATERIALS USED FOR MANUFACTURING MOTORS
+  排除原因: 二手货物
+  匹配词: used
+
+[657] GIRL'S KNITTED VEST50%RAYON 50%RECYCLED POLYESTER LADY'S KNITTED VEST210G, 95/5 RECYCLED POLYESTER/SPANDEX
+  排除原因: 二手货物
+  匹配词: recycled
+
+[665] 中文品名:晶圆表面缺陷检测仪(旧) 型号:Archer AlM+ 数量:1台
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: 晶圆
+
+[666] CHICKENCUT,WITHOUT BONE,FROZEN SET AT TEMP:-18'C VENT:CLOSED
+  排除原因: 活动物及动物产品/血制品/冷冻品/疫苗
+  匹配词: frozen, chicken
+
+[668] SPAREPARTS FOR TRUCKS: CYLINDER LINER 8409.99 FUEL PIPE 4009.31 PRIMARY FUEL FILTER 8421.23 PISTON 8409.99 OIL SEAL 8484
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: truck
+
+[673] 513MT (+/- 10 PCT) OF NAPHTHALENE FLAKES AS PER APPROVED SPECIFICATIONS AT PACKED IN 25 KG/BAG IN CONTAINERS. ACCORDING 
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: ship
+
+[691] VETERINARY MONITOR T4T HS CODE:901890 VETERINARY MONITOR M6S HS CODE:901890 VETERINARY BP MONITOR PETPRO HS CODE:901890 
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: lamp
+
+[698] USED CIRCULAR KNITTING MACHINE AND PARTS ---- HS:8447.12
+  排除原因: 二手货物
+  匹配词: used
+
+[703] GASOLINE POWER SPRAYER PLUNGER PUMP BRUSH CUTTER ROTARY TRADE ROLLER BOLT CHAIN STIR OVER HOSE TIRE PLATE BELT COMBINE H
+  排除原因: 易燃易爆品/烟花爆竹
+  匹配词: gasoline
+
+[705] 名称:叉车 名称:石英手表 名称:蓝牙耳机 名称:香薰礼盒 名称:滴油戒指,材质:合金 名称:戒指,项链,手镯,材质:铜 名称:灯泡 名称:男长裤,男T恤,男牛仔裤,长裙,女上衣,女毛衣,女棉衣,女棉夹克,男POLO衫,半裙,泳衣*
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: 灯泡
+
+[708] wire rope/shackle/Wire rope clamp/Square connected circle/aluminum foil tape/wire mesh/Flame retardant rubber strip/adhe
+  排除原因: 军火/军品/原木/鱼粉/水泥/原糖/精制糖/原煤/黄麻
+  匹配词: gun
+
+[715] 中文品名:晶圆表面缺陷检测仪(旧) 型号:SFS 6420 数量:1台
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: 晶圆
+
+[718] MARINE MIRROR LIGHT
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: mirror
+
+[726] MIDDLE FURNACE CLAMPING PLAT.HS CODE:840290 *
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: lamp
+
+[731] RESIN STATUE METAL LANTERN GLASS CUP KITCHEN TRAY PORCELAIN MUG PLASTIC CLEANING WARE COOLER BOX
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: glass, porcelain
+
+[734] USED SHOES USED BAGS
+  排除原因: 二手货物
+  匹配词: used
+
+[741] ACRYLIC SOLID SURFACE 1)SUDU1381615/20GP/ML-CN3121165/71 PACKAGE/26680.00KGS/20CBM 2)TCLU9915085/20GP/ML-CN3173470/55 PA
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: ship
+
+[748] CAR LIGHT DOME SPARE PARTS OPERATING BOX 12 VOLTS SPEAKER 12 VOLTS
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: car
+
+[757] HYBRID CAR VIN:LFMCU1BR1S0102295 LFMCU1BR8S0102925 LFMCU1BR1S0105052
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: car
+
+[766] BICYCLE PART HS.CODE: 871410
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: bicycle
+
+[767] LASER LEVEL VOLTAGE TESTER DIGITAL CLAMP METER WIRE CUTTERS
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: laser
+
+[784] TRAILER PARTS
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: trailer
+
+[797] DUCTILE CASTING IRON ROTOR HUB EP5-ROH-05 INVOICE NR.:BS250915 PO.NO:4505236232 SERIAL NR. P D03032235-1 0004 P
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: tile
+
+[809] EXCAVATOR SPARE PARTS HS CODE:8431499900
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: excavator
+
+[817] 气相色谱仪
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: 色谱
+
+[818] ANDRITZ 131247018 SLEEVE WEAR SECTION FP34 PRICE ANDRITZ 131243865 WEAR BUSH FOR NOZZLE FP34 L 113 D 465MM ANDRITZ 13124
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: rice
+
+[822] FITNESS EQUIPMENT(FLOOR MATS, BARBELL, SPIN BIKE, WEIGHT VEST, BENCH, SQUAT RACK, CLOTHES, STONE)
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: stone
+
+[830] CERAMIC STRUCTURED PACKING
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: ceramic
+
+[835] MENOGOLD
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: gold
+
+[837] Frozen Chicken Breast Boneless Skinless
+  排除原因: 活动物及动物产品/血制品/冷冻品/疫苗
+  匹配词: frozen, chicken
+
+[847] 玻璃储罐、涂料生产线
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: 玻璃
+
+[852] Concrete pump pipe Rubber seal Clamp
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: lamp
+
+[861] YHG SILVER REFILL WITH WAX HEAT ERASABLE PEN REFILLS HS CODE:96082000
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: silver
+
+[865] STONE PRODUCTS
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: stone
+
+[873] 汽车
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: 汽车
+
+[884] MOTORCYCLE LIFT
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: motorcycle
+
+[887] 名称:产品图册,门把手+展板,展板底座,展板支架,展会广告挂画,展品含展架(活动屏风、玻璃趟门),挂画,红毯,资料书,包装带+墙纸刀+十字批,木质防火门小样,钢质防火门,不锈钢防火门,防火装甲门,海报,彩页,证书,精雕版 名称:铁制烧烤炉*
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: 玻璃
+
+[893] BRAND NEW ELECTRIC VEHICLE
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: vehicle
+
+[895] 气相色谱仪 1台
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: 色谱
+
+[906] CORIOLIS FLOW METER 1 SHIPSET FOR S1098
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: ship
+
+[907] TERMS OF PRICE : CIF ORIGIN : CHINA 3-AMINOPROPYLMETHYLDIETHOXYSILANE QTY:180.0KG COST:19.2 AMT:USD 3456.0 CLASS:8 UN NO
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: rice
+
+[917] WORKED SLATE 1)BSIU3351789/20GP/ML-CN0719630/57 PACKAGE/26950.00KGS/20CBM 2)BSIU3352091/20GP/ML-CN0719603/57 PACKAGE/269
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: ship
+
+[929] 高效液相色谱仪
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: 色谱
+
+[937] BOARD TRIMMING SAW BOARD CUTTING SAW 150KVA DIESEL GENSET DIESEL ENGINE YJV22 CABLE TIRES 315/80R22.5
+  排除原因: 易燃易爆品/烟花爆竹
+  匹配词: diesel
+
+[938] STONEWOOL BOARD
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: stone
+
+[940] FOOD TRAILER HS:8716400000
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: trailer
+
+[941] TEXTILE PIECE GOODS
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: tile
+
+[946] STAMPING PART SANDING SPONGE VELCRO
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: stamp
+
+[952] FROZEN SHOPA MIXED FISH CODE: 303890000 FREIGHT PREPAID NUMBER OF CARTONS: 2509 CARTONS NUMBER OF BAGS: 50 BAGS
+  排除原因: 活动物及动物产品/血制品/冷冻品/疫苗
+  匹配词: frozen
+
+[958] 威化饼干 WAFERS
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: wafer
+
+[960] 名称:美工刀,刀片 名称:儿童小电动车,美容仪,美容仪+洗脸仪,剃毛器,水杯+耳机+小风扇+户外小灯 名称:不锈钢量油尺,试水膏 名称:园林剪 名称:头扣 名称:抓夹 名称:香薰套装,香水礼盒,游戏纸币 名称:减压器+回火器
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: 电动车
+
+[971] Wheel excavator DX210WA
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: excavator
+
+[985] 1) 6MM BLUE REFLECTIVE GLASS, H.S CODE : 7005.10.00 NET WEIGHT : 24320 KG UNIT PRICE : USD 6.4/SQM 2) 8MM BLUE REFLECTIV
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: rice
+
+[989] STONE COATED METAL ROOF SHEETS HS: 73089000
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: stone
+
+[1003] 8 CTNS / 74.4 KGS / 0.32 CBM BIKE TOOLS 82 CTNS / 961.89 KGS / 2.97 CBM BICYCLE BRAKE SHOES 10 CTNS / 147 KGS / 0.45 CBM
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: bicycle
+
+[1027] STEEL WHEELS (FOR AGRICULTURAL TRAILERSAND OTHER TRAILED AGRICULTURALEOUIPMENT USING IN FIELDS)
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: agricultural
+
+[1029] CHIP MOUNTER
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: chip
+
+[1039] COUPLING BLANKS HS CODE:73079990 BUYER:CENTROID SUPPLY CHAIN SOLUTIONS 19101 LIMESTONE COMMERCIAL DRIVE SUITE#150, PMB#1
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: stone
+
+[1041] X射线荧光光谱仪
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: 光谱
+
+[1042] HYDRAULIC TRUCK CRANE SANY 75 TONES SPARE PARTS
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: truck
+
+[1046] JETTA VS5 USED CAR HS CODE :8703225010 VIN NUMBER (CHASSIS): LFV2B20L6P4101631
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: car
+
+[1051] CONVENTIONAL GANTRY MILLING MACHINE HS CODE: 8459611000
+  排除原因: 超大超重件/港机设备/滚装货/龙门吊
+  匹配词: gantry
+
+[1054] SEALANT DM FLEX 258 CORNICE
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: corn
+
+[1064] FIBER LASER RESONATOR HS CODE:901320000090 MOTOR HS CODE:850152209019 DRIVER HS CODE:850440959011 TOUCH SCREEN HS CODE: 
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: laser
+
+[1066] WORKED SLATE 1)SUDU7840820/20GP/ML-CN3124492/110 PACKAGE/25740.00KGS/20CBM 2)TLLU2391317/20GP/ML-CN0643085/99 PACKAGE/26
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: ship
+
+[1073] KILN CAR, KILN FURNITURE-SLAB , KILN FURNITURE-SUPPORTER
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: car
+
+[1083] 画笔、绘画本、油画颜料等及配件
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: 油画
+
+[1090] YARD LONG BEAN SEEDS( GREAT WALL 03) HS:1209919000 THE NUMBER OF THE CREDIT: 25DCI3USD061094 THE DATE OF THE CREDIT:2503
+  排除原因: 易腐易蛀品/果仁/花生/大豆/豆粕/谷物/鲜活货
+  匹配词: bean
+
+[1095] ELECTRIC CAR VIN:L6T79MCN6RN057226
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: car
+
+[1100] 1SET YG023B-III FULLY AUTOMATIC SINGLE YARN STRENGTH TESTER HS CODE: 9024800000 1 SET M8 TEXTILE LABORATORY MACHINE HS C
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: tile
+
+[1101] UPVC WINDOW UPVC DOOR CERAMIC TILE GLAZED TILE HDF WOODEN DOOR
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: ceramic, tile
+
+[1111] CAR BENCH LASER WELDING MACHINE
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: laser
+
+[1117] FLATBER TRAILER 4PKGS(10PCS) VIN NO.:LA9GBD3A4S0SBG076 LA9GBD3A6S0SBG077 LA9GBD3A8S0SBG078 LA9GBD3AXS0SBG079 LA9GBD3A6S0
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: trailer
+
+[1131] NONWOVENGEOTEXTILE (#25PO0000675-1) H.S. CODE:5603.94
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: tile
+
+[1136] FIBERGLASS MANHOLE COVER
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: glass
+
+[1137] Marigold Oleoresin HS:1302199099 L/C Number: 0406225IM0Y00092
+  排除原因: 艺术品/玉制品/收藏品/古物/金银珠宝/钻石/现金/有价证券
+  匹配词: gold
+
+[1143] GLASS FIBER WOVEN FABRIC ROLL
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: glass
+
+[1144] TEXTILE FABRICS CARGO IN TRANSIT TO MALI ON CONSIGNEE OWN RISK ,COSTS AND RESPONSIBILITY CARRIER RESPONSIBILITY CEASES A
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: tile
+
+[1149] 二手燃油车 TOYOTA COROLLA
+  排除原因: 二手货物
+  匹配词: 二手
+
+[1151] SCREEN PRINTING MACHINE HS CODE: 8443192290
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: screen
+
+[1167] 3 AXLE CARGO SEMI TRAILER VIN NUMBER: LA0940C36R9WM8446 4 AXLE CARGO SEMI TRAILER VIN NUMBER: LA0940C36R9WM8445 LOWBED S
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: trailer
+
+[1184] BX2110 WOOD CHIPPER SPARE PARTS HS CODE:8466920000
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: chip
+
+[1185] 矿卡配件、门窗、餐桌椅、玻璃
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: 玻璃
+
+[1193] MONOCRYSTALLINE SOLAR MODULE
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: crystal
+
+[1203] laser marking machine
+  排除原因: 精密仪器设备(无国内维修)/芯片/液晶/单台>200万
+  匹配词: laser
+
+[1205] SPARE PARTS FOR OFF-HIGHWAY DUMP TRUCK
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: truck
+
+[1211] STEP LADDER SHELF DINING CHAIR THE CARRIER'S LIABILITY IS END AT TEMA,GHANA, THE SHIPPER DECLARES THAT THE CARRIAGE FROM
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: ship
+
+[1217] TEXTILE PEICE GOODS
+  排除原因: 玻璃/玻璃制品/陶瓷/石材/易碎品
+  匹配词: tile
+
+[1226] EXCAVATOR PAVER COMPACTOR
+  排除原因: 车辆/航空器/船舶/运输设备
+  匹配词: excavator
+
+----------------------------------------
+未分类货物 (共4718条, 展示前100条)
+----------------------------------------
+[40] MacTex W2 40.05 36 Roll (Roll Size: 5.2 x 200m) HS CODE: 5407.61.90 MacTex W2 20.05; 200x50 kN/m 41 Rolls (Roll Size: 5.
+
+[78] 车顶饰条
+
+[82] HAIR TRIMMER HS CODE:851020
+
+[88] YFG & X104 SUNROOF PRODUCTION LINE
+
+[103] INSULATING MACHINING PARTS
+
+[105] VERTICAL DIFFUSION FURNACE WITH STANDARD ACCESSORIES MODEL:DD-853V-8BL3
+
+[121] hongkha village, Chanthabuly district, Vientiane capital aos hongkha village, Chanthabuly district, Vientiane capital ao
+
+[122] MORITEK ULTIMATE MORI-LIFT MIST 30ml MORITEK ULTIMATE MORI-LIFT MIST 30ml (REFILL)
+
+[151] PHAFFIA RHODOZYMA
+
+[161] BUCKETS KNIT DRIVER COVER *HS CODE : 9506.39
+
+[163] SUB ADAPTER
+
+[164] STATOR AND ROTOR CORE
+
+[166] HOUSEHOLD ITEMS OFFICE SUPPLIES SEE ATTACHMENT
+
+[171] 找圆机,旋切机,试验机,甲醛干燥器,空压机,砂光辊 CONTRACT NO.: 20250416 COMMERCIAL INVOICE NO.:20250511
+
+[188] SQD25F BRUSH STRAINER
+
+[200] YIZHENG RAW-WHITE 0.9D*51MM SOLID S GN412 YIZHENG 2.5D*65MM solid WF350
+
+[203] WATER BASED INKJET INK(CYAN)HS CODE:3215902000 WATER BASED INKJET INK(MAGENTA)HS CODE:3215902000 WATER BASED INKJET INK(
+
+[213] PARA ARAMID FIBER TF25106969980198 MADE IN CHINA
+
+[220] 夹具连接件,管路连接件,交换机,变频器
+
+[232] FALSE EYELASHES HS.CODE: 670490
+
+[234] HAIR GOODS
+
+[243] AE3S(脂肪醇聚氧乙烯醚硫酸钠)
+
+[248] 26.000 METRIC TONS OF SUCROSE SYRUP TOTAL NET WEIGHT:520.000 METRIC TONS TOTAL GROSS WEIGHT:522.600 METRIC TONS TOTAL NU
+
+[251] MATERIAL FOR ROLLING
+
+[252] HEADSET WITH MICROPHONE
+
+[255] LOT1 RAN 100 SITES ALL REMAINING PARTS
+
+[257] SANDWICH PANELS ALUMINIUM BENDING PARTS
+
+[259] PERFUME SPRAYER HEAD
+
+[265] TUNDISH TUNFLOW HS 69021000
+
+[268] ALUMINIUM BODY STOCK QUANTITY 145.574 MT HS CODE 7606.1200 LETTER OF CREDIT NUMBER: 661010139227-S
+
+[285] GEELY COOLRAY VIN:LB37622Z2SX641395
+
+[291] SKID STEER LOADER HS 8429510000
+
+[294] STORAGE BOX HS CODE: 392310
+
+[297] NATURAL XANTHOPHYLL/BIOFIL YELLOW
+
+[298] AC EV CHARGING STATION (IMHN-07K0-BCUK) AC EV CHARGING STATION (IMHN-22K0-BCUK )
+
+[301] L-GLUTATHIONE REDUCED
+
+[304] VOLKSWAGEN ID4 CROZZ 2024 EDITION PRO VERSION LFVVB9E61R5024849; LFVVB9E6XR5024798; LFVVB9E64R5024778; LFVVB9E68R5022760
+
+[311] FLIGHT CASE HS CODE:4415100090
+
+[317] 870EX用包芯纱装置 2套
+
+[323] SELF FURRED NETTING
+
+[326] FUTON PILLOW
+
+[327] PC301-22 IC0300023 PC4330E75-20 IC7800921 PC4330E85-20 IC7700796 HS 3907400090/3907400010
+
+[332] SPEED UTV EL DIABLO 2025
+
+[334] STC GELS
+
+[337] Neck support pillow
+
+[350] SKID STEER LOADER
+
+[355] 置物架Storage rack HS CODE:9403200000 ГHГ.:94032000
+
+[359] MATIERES PREMIERES POUR FORMATION DE FEUILLE DE FOREX. CFR CASABLANCA PORT MOROCCO THE L/C NUMBER ILC00152648/0017
+
+[365] FANS
+
+[372] Weight indicator model NEXT MF0
+
+[385] SWIMMING POOL EQUIPMEN
+
+[389] MERCEDES-BENZ G63 MY25W1NWH5AB7SX038666
+
+[393] PARTICLEBOARD
+
+[394] PASSENGER ELEVATOR
+
+[395] FRP MANHOLE COVER
+
+[399] COMBINED SLIDE
+
+[400] HYPERBARIC CHAMBER HS Codes: 76110000
+
+[403] ROUTER COMPONENTS(SZ2533) HS CODE:8517799000,3926909090,7616991090
+
+[405] Elantra 车架号: LS6ANE2N4SA00006 旧长安牌1497ML小型轿车 CNY72,210.60 LS6ANE2N3SA000219 旧长安牌1497ML小型轿车CNY72,210.60
+
+[412] Atomizer Device
+
+[422] 移动破碎站
+
+[425] 肉饼成型机,1件
+
+[428] MEDIUM DENSITY FIBERBOARD
+
+[429] CARRIER ASSY
+
+[437] TRIGGER SPRAYER HEAD
+
+[459] HOUSEHOLD GOODS AND SPARE PARTS HAMU 2239149/HLK2451558 UACU 5882450/HLK2451557
+
+[461] 餐具 DINNER SET HS CODE:6911101900ГHГ.:69111019
+
+[471] 3托盘,共计120箱
+
+[472] CORE HS: 850490
+
+[475] ROAD CONE WARNING LIGHT
+
+[478] HOUSEHOLD GOODS AND SPARE PARTS
+
+[481] CAPS
+
+[486] Crank stand 手摇架
+
+[487] THERMAL TRANSFER RIBBON COUNTRY OF ORIGIN:JAPAN INV NO.25 HTD-001J HS CODE:9612.10
+
+[490] ORTHOPEDIC BRACES SO NO.:255591156 HBL NO.:JYSF2507003 CNTR NO.:MRKU2134790/40HQ CNTR NO.:TLLU4699248/40HQ
+
+[493] SPARE PARTS
+
+[500] RIMS HS: 870870
+
+[502] TERRAZZO SUDU7587347/ML-CN8156711/20GP/106PACKAGES/26610.000KGS/20.000CBM TGHU0151956/ML-CN2735844/20GP/55PACKAGES/25760
+
+[504] Annealing Furnac(Kiln)
+
+[506] Core Board
+
+[529] ROTOR FRAME EP5E3
+
+[530] PS Vacuum Blister
+
+[531] CARAMEL COLOR CCL-053
+
+[532] ALUMINIUM CIRCLE
+
+[535] CARAMEL COLOR CDP-008
+
+[553] MODIFIED POLYAMIDE PA6-G6830 NC104 PA6-G6830 LCBK 359/18 QUARTER3, HOA LOI WARD, HO CHI MINH CITY, VIET NAM.
+
+[555] GOLF CARTS
+
+[559] Hyperbaric Chaimber Wellness Device
+
+[568] LIXIANG L7PRO VIN:HLX338128S0769150
+
+[569] DRYER BOX
+
+[578] Atomizer Device
+
+[582] DUMBWAITER (HS:8428909090)
+
+[583] DISPLAY FIXTURE HS CODE:940320
+
+[591] ROLLER BIT; PDC BIT
+
+[597] CUTTING BOARDS
+
+[607] CLEANING SPONGE
+
+[608] LACTASE
+
+[614] BUILDING MATERIAL
+
+[615] PREFORMS HS CODE:392330
+
+[617] COUPLING
+
+----------------------------------------
+HS大类分布（可承保）
+----------------------------------------
+  未分类: 4718
+  机器、机械器具、电气设备及其零件: 3774
+  贱金属及其制品: 3462
+  塑料及其制品；橡胶及其制品: 2389
+  化学工业及其相关工业的产品: 1756
+  纺织原料及纺织制品: 1552
+  杂项制品: 1188
+  木浆；纸及纸板: 706
+  矿产品: 654
+  木及木制品；木炭: 595
+  植物产品: 503
+  石料、石膏、水泥、石棉、云母等制品；陶瓷；玻璃: 416
+  信息缺失/无效描述: 259
+  光学、医疗、精密仪器设备；钟表；乐器: 230
+  珍珠、宝石、贵金属、仿首饰: 204
+  生皮、皮革、毛皮及其制品: 186
+  动、植物油、脂: 172
+  活动物;动物产品: 168
+  鞋、帽、伞、杖、鞭及其零件: 163
+  食品；饮料、酒及醋；烟草: 159
+  车辆、航空器、船舶及有关运输设备: 81
+  特殊交易品及未分类商品: 11
+  艺术品、收藏品及古物: 6
+  武器、弹药及其零件、附件: 2

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>从文字到风险：航运保险智能分类 - 期末报告</title>
+<style>
+  @page { size: A4; margin: 2cm; }
+  body { font-family: "SimSun", "Microsoft YaHei", serif; font-size: 12pt; line-height: 1.8; color: #222; max-width: 800px; margin: 0 auto; padding: 20px; }
+  h1 { font-size: 20pt; text-align: center; margin: 30px 0 10px; }
+  h2 { font-size: 15pt; border-bottom: 2px solid #333; padding-bottom: 5px; margin: 30px 0 15px; page-break-before: always; }
+  h2:first-of-type { page-break-before: avoid; }
+  h3 { font-size: 13pt; margin: 20px 0 10px; }
+  p { text-indent: 2em; margin: 8px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 10pt; }
+  th, td { border: 1px solid #666; padding: 8px 10px; }
+  th { background: #eee; }
+  .cover { text-align: center; padding: 100px 0; }
+  .cover h1 { font-size: 24pt; margin-bottom: 30px; }
+  .cover p { text-indent: 0; font-size: 13pt; color: #555; }
+  .page-break { page-break-before: always; }
+  .stat-grid { display: flex; justify-content: space-around; margin: 20px 0; flex-wrap: wrap; }
+  .stat-box { text-align: center; padding: 12px; border: 1px solid #ddd; width: 22%; min-width: 130px; }
+  .stat-num { font-size: 22pt; font-weight: bold; color: #c0392b; }
+  .stat-label { font-size: 9pt; color: #666; }
+  code { background: #f5f5f5; padding: 2px 6px; font-size: 10pt; }
+  pre { background: #f5f5f5; padding: 15px; font-size: 9pt; border-left: 3px solid #333; overflow-x: auto; }
+  .note { background: #e8f4fd; border-left: 4px solid #2980b9; padding: 10px 15px; margin: 15px 0; font-size: 11pt; }
+  .finding { background: #fef9e7; border-left: 4px solid #f39c12; padding: 10px 15px; margin: 15px 0; }
+  ul, ol { margin: 10px 0; padding-left: 2em; }
+  li { margin: 5px 0; }
+</style>
+</head>
+<body>
+
+<!-- 封面 -->
+<div class="cover">
+  <h1>从文字到风险</h1>
+  <p style="font-size:15pt">基于非结构化货品描述的航运保险智能分类与风险评估</p>
+  <p style="margin-top:50px">FINA2003 金融科技前沿 · 期末项目报告</p>
+  <p>合作企业：安蓝信息科技</p>
+  <p>第一组</p>
+  <p>成员：华羽（2025241005）、梅誉扬（2025241009）、杨宇轩（2025241019）</p>
+  <p style="margin-top:50px">2025年5月20日</p>
+</div>
+
+<!-- 模块一 -->
+<h2>一、行业与产品分析</h2>
+
+<h3>1.1 航运保险市场现状与痛点</h3>
+<p>中国航运保险市场规模超过500亿元人民币，年增速约8-10%，主要由中国平安、中国人保、中国太保等大型保险公司主导。在承保流程中，货品分类是风险定价的核心环节——投保人填写的货品描述直接影响保险公司对货物风险等级的判断，进而决定是否承保及保费定价。</p>
+<p>当前行业核心痛点：(1) <b>非标准化输入</b>：投保人填写自由文字，从"散装化工液体"到"建筑设备零件若干"，无统一规范；(2) <b>人工依赖严重</b>：风险评估人员需逐条手动判断，单票耗时5-15分钟；(3) <b>分类标准不统一</b>：不同审核人员可能给出不同结论，导致定价不一致。</p>
+<p>本项目针对安蓝信息科技的真实业务痛点，设计并实现基于非结构化货品描述的自动分类与风险评估方案。</p>
+
+<h3>1.2 竞品与方案调研</h3>
+<table>
+  <tr><th>方案类型</th><th>代表</th><th>优势</th><th>不足</th></tr>
+  <tr><td>传统规则引擎</td><td>各保险公司内部系统</td><td>可控、可解释</td><td>维护成本高、覆盖率有限</td></tr>
+  <tr><td>机器学习分类</td><td>Concirrus(英)、Planck(以)</td><td>自适应、高精度</td><td>需标注数据、可解释性差</td></tr>
+  <tr><td>LLM方案</td><td>Zest AI等</td><td>语义理解、零样本</td><td>成本高、幻觉风险</td></tr>
+  <tr><td>混合方案</td><td>部分MGA</td><td>规则+ML互补</td><td>复杂度高、维护叠加</td></tr>
+</table>
+<p>综合考虑无历史标注数据、需要高可解释性、开发周期短等约束，我们选择<b>规则匹配方案</b>。该方案可快速落地，具有高可解释性和低维护成本，局限性可通过后续迭代改进。</p>
+
+<h3>1.3 产品设计</h3>
+<p>系统采用三级处理流程：</p>
+<ol>
+  <li><b>文本预处理层</b>：清洗货品描述（去换行符、全角转半角、空格归一）。</li>
+  <li><b>除外标的风险筛查层</b>：基于10类拒保商品目录做关键词匹配，命中即标记"高风险（拒保）"。</li>
+  <li><b>HS大类匹配层</b>：未命中除外标的的货物，基于22大类HS编码体系做自动归类。</li>
+</ol>
+<p><b>人工复核机制</b>：仅对"高风险"和"未分类"案例触发人工审核（约占总量30%），其余自动放行，效率提升约70%。未分类案例的人工判定结果反馈至关键词词库，形成持续优化闭环。</p>
+
+<h3>1.4 落地风险与应对</h3>
+<ul>
+  <li><b>分类错误风险</b>：对高风险类别采用保守策略（宁可多拒保不可漏保），上线初期设置人工复核过渡期。</li>
+  <li><b>数据偏差风险</b>：建立定期词库更新机制，通过分析未分类案例补充新词。</li>
+  <li><b>系统性低估风险</b>：未来引入历史理赔数据，在品类标签基础上叠加赔付率权重。</li>
+</ul>
+
+<!-- 模块二 -->
+<h2>二、数据处理与分类建模</h2>
+
+<h3>2.1 数据探索</h3>
+<table>
+  <tr><th>数据集</th><th>规模</th><th>内容</th></tr>
+  <tr><td>货物描述信息2025.xlsx</td><td>28,304条</td><td>投保人填写的货品自由文本描述</td></tr>
+  <tr><td>海关shcode表.xlsx</td><td>8,045条</td><td>HS编码体系，22大类+精细分类</td></tr>
+  <tr><td>保险除外标的表.xlsx</td><td>10类</td><td>保险公司拒保商品目录</td></tr>
+</table>
+<p><b>数据特征：</b>约60%为英文、40%为中文，存在中英混杂；平均描述长度约45字符，最短仅1字符（无效），最长超500字符；约0.9%（259条）为明显无效描述如"SEE ATTACHMENT"；常见噪声包括集装箱号、运输信息、HS编码混入等。</p>
+
+<h3>2.2 文本预处理</h3>
+<ol>
+  <li><b>换行符统一</b>：将\n、\t及实际换行替换为空格。</li>
+  <li><b>全角转半角</b>：全角字符(FF01-FF5E)转半角，全角空格(U+3000)转半角空格。</li>
+  <li><b>多余空格归一</b>：连续空格合并为单个空格。</li>
+</ol>
+<p>选择依据：采用关键词匹配策略，预处理以<b>保留原始语义信息</b>为目标，不做激进分词或停用词去除，避免丢失关键分类信号。</p>
+
+<h3>2.3 分类方案实现</h3>
+<p><b>方法：</b>基于规则的多层关键词匹配。选择理由：无需标注数据、完全可解释、规则可灵活调整。</p>
+<p><b>词库规模：</b>拒保规则10类，HS分类规则22类，共计约500+中英文关键词。中文使用子串匹配，英文短词(≤3字符)使用正则整词边界匹配以避免子串误判。</p>
+
+<div class="finding">
+  <b>核心发现——子串误匹配问题：</b>初始版本中95.3%的拒保案例仅命中1个关键词。检查发现："car"(车辆)错误匹配了"cardboard"、"art"(艺术品)错误匹配了"parts"、"ship"(船舶)错误匹配了"shipper"。修复后拒保率从28.2%降至17.5%，排除3,045条误判。这表明规则系统真正的挑战不在召回而在精度，整词匹配是英文NLP中基础但常被忽视的细节。
+</div>
+
+<h3>2.4 分类结果</h3>
+<div class="stat-grid">
+  <div class="stat-box"><div class="stat-num">28,304</div><div class="stat-label">总数据量</div></div>
+  <div class="stat-box"><div class="stat-num" style="color:#27ae60">20,309</div><div class="stat-label">可承保 (82.5%)</div></div>
+  <div class="stat-box"><div class="stat-num" style="color:#c0392b">4,950</div><div class="stat-label">拒保 (17.5%)</div></div>
+  <div class="stat-box"><div class="stat-num">83.3%</div><div class="stat-label">分类覆盖率</div></div>
+</div>
+
+<p><b>拒保原因分布（Top 5）：</b></p>
+<table>
+  <tr><th>拒保类别</th><th>数量</th><th>占比</th></tr>
+  <tr><td>玻璃/陶瓷/石材/易碎品</td><td>1,470</td><td>29.7%</td></tr>
+  <tr><td>车辆/航空器/船舶</td><td>1,156</td><td>23.4%</td></tr>
+  <tr><td>易腐易蛀品/鲜活货</td><td>630</td><td>12.7%</td></tr>
+  <tr><td>精密仪器/芯片/液晶</td><td>409</td><td>8.3%</td></tr>
+  <tr><td>易燃易爆品</td><td>295</td><td>6.0%</td></tr>
+</table>
+
+<p><b>可承保货物HS大类分布（Top 5）：</b></p>
+<table>
+  <tr><th>HS大类</th><th>数量</th><th>占比</th></tr>
+  <tr><td>机器、机械器具、电气设备</td><td>3,774</td><td>16.2%</td></tr>
+  <tr><td>贱金属及其制品</td><td>3,462</td><td>14.8%</td></tr>
+  <tr><td>塑料及其制品；橡胶</td><td>2,389</td><td>10.2%</td></tr>
+  <tr><td>化学工业产品</td><td>1,756</td><td>7.5%</td></tr>
+  <tr><td>纺织原料及纺织制品</td><td>1,552</td><td>6.6%</td></tr>
+</table>
+
+<h3>2.5 错误分析</h3>
+<p>剩余未分类货物4,718条（20.2%）主要包括：(1) 高度专业化的产品名称（如"PHAFFIA RHODOZYMA"法夫酵母、"PARA ARAMID FIBER"对位芳纶纤维）；(2) 模糊描述（如"HOUSEHOLD ITEMS"）；(3) 多商品混合描述。这类case适合引入TF-IDF向量相似度匹配或LLM零样本分类作为补充策略。</p>
+
+<!-- 模块三 -->
+<h2>三、风险预测初探</h2>
+
+<h3>3.1 风险标签与评估</h3>
+<p>基于分类结果建立风险分层框架：</p>
+<ul>
+  <li><b>高风险 (Risk=1.0)</b>：命中除外标的表中任一拒保类别，4,950条(17.5%)，建议自动拒保+人工复核。</li>
+  <li><b>中高风险 (Risk=0.5-0.9)</b>：虽未命中除外标的但品类天然高风险（如玻璃/陶瓷制品），约1,800条(6.4%)，建议人工定价。</li>
+  <li><b>低风险 (Risk=0-0.5)</b>：常规工业品和消费品，约16,836条(59.5%)，建议自动承保+标准定价。</li>
+  <li><b>未分类</b>：4,718条(16.7%)，需人工判定。</li>
+</ul>
+
+<h3>3.2 业务含义</h3>
+<p>约59.5%的货品可安全实现自动承保，17.5%可自动识别为高风险并拒保——规则系统可覆盖约77%的常规业务场景，将人工审核压缩至约23%。对年处理十万级保单的保险公司，可节省数千小时人工审核时间。</p>
+<div class="note">
+  <b>局限性：</b>当前风险评分仅为基于货物类别的初步推断，未纳入历史理赔数据、运输路线风险、季节性因素等。建议积累6-12个月标注数据后，构建基于LightGBM/XGBoost的监督学习风险预测模型，将分类标签作为特征之一。
+</div>
+
+<!-- 总结 -->
+<h2>四、总结与展望</h2>
+<p><b>项目成果：</b>(1) 构建了覆盖10类拒保+22类HS的中英文关键词词库；(2) 实现了三层规则匹配引擎，代码约400行，运行时间约15秒；(3) 达到83.3%自动分类覆盖率；(4) 发现并修复子串误匹配关键精度问题。</p>
+<p><b>改进方向：</b>短期引入TF-IDF向量相似度兜底；中期积累标注数据训练XGBoost分类器；长期接入历史赔付数据构建端到端风险评分卡模型，探索BERT等预训练模型的语义匹配能力。</p>
+<div class="note">
+  <b>展望：</b>"从文字到风险"的路径可推广至财产险、货运险等其他需要基于非结构化描述进行风险判断的保险场景。随着大模型技术成熟，未来有望实现"描述输入→智能解析→风险定价→保单生成"的全自动化承保流程。
+</div>
+
+<!-- 参考文献 -->
+<h2>参考文献</h2>
+<ol>
+  <li>中国银行保险监督管理委员会. 航运保险业务发展报告. 2024.</li>
+  <li>International Union of Marine Insurance. Global Marine Insurance Report 2024.</li>
+  <li>中华人民共和国海关总署. 进出口税则商品及品目注释. 2024版.</li>
+  <li>Concirrus. AI-Powered Marine Insurance Analytics. concirrus.com</li>
+  <li>安蓝信息科技. 智能航运保险解决方案白皮书. 2024.</li>
+  <li>Jurafsky D, Martin J H. Speech and Language Processing. 3rd ed. 2024.</li>
+</ol>
+
+<!-- 附录 -->
+<div class="page-break"></div>
+<h2>附录A：代码说明</h2>
+<p><b>运行环境：</b>Python 3.9+, pandas, openpyxl</p>
+<pre>
+期末项目/
+├── cargo_classifier.py   # 主分类引擎
+├── presentation.html     # 课堂汇报幻灯片
+├── report.html           # PDF报告源文件
+├── 分类结果.xlsx         # 详细分类结果
+├── 分类报告.txt          # 统计报告
+├── 货物描述信息2025.xlsx  # 原始数据
+├── 海关shcode表.xlsx     # 原始数据
+└── 保险除外标的表.xlsx    # 原始数据
+</pre>
+<p>运行方式：<code>python cargo_classifier.py</code>，约15秒输出分类结果。</p>
+
+<div class="page-break"></div>
+<h2>附录C：小组成员分工说明</h2>
+<table>
+  <tr><th>成员</th><th>学号</th><th>分工说明（≤150字）</th></tr>
+  <tr><td>华羽</td><td>2025241005</td><td>负责数据探索、文本预处理、关键词词库构建与优化、分类结果统计分析及错误案例诊断。</td></tr>
+  <tr><td>梅誉扬</td><td>2025241009</td><td>负责课堂汇报PPT制作、行业背景调研、竞品分析、产品设计方案撰写及汇报展示。</td></tr>
+  <tr><td>杨宇轩</td><td>2025241019</td><td>负责分类引擎代码编写与调试、规则匹配逻辑实现、整词边界修复及系统运行测试。</td></tr>
+  <tr><td colspan="3" style="text-align:center;color:#666;padding-top:8px;">以上三位成员均参与了PDF报告的撰写、修改与定稿工作。</td></tr>
+</table>
+
+<p style="text-align:center;margin-top:50px;color:#888">--- 报告完 ---</p>
+
+</body>
+</html>
